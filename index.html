@@ -1,0 +1,318 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Зёрна & Прогрев | Сеть кофеен и школа бариста</title>
+    <link rel="preconnect" href="https://googleapis.com" />
+    <link rel="preconnect" href="https://gstatic.com" crossorigin />
+    <link
+      href="https://googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <!-- НАВИГАЦИЯ (HEADER) -->
+    <header class="main-header">
+      <div class="container header__container">
+        <div class="header__logo">Зёрна & Прогрев</div>
+        <nav class="header__nav">
+          <a href="#about">О нас</a>
+          <a href="#menu">Меню</a>
+          <a href="#school">Школа бариста</a>
+          <a href="#news">Акции</a>
+          <a href="#contacts">Контакты</a>
+        </nav>
+        <div class="header__geo">🇧🇾 Минск</div>
+      </div>
+    </header>
+
+    <!-- 1. ГЛАВНЫЙ СЛАЙДЕР (HERO) -->
+    <section class="hero-slider">
+      <div
+        class="hero-slide active"
+        style="
+          background-image:
+            linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+            url(&quot;https://unsplash.com&quot;);
+        "
+      >
+        <div class="container hero__container-content">
+          <span class="hero__badge">Новинка сезона</span>
+          <h1 class="hero__title">Вкус лета, сила белка</h1>
+          <p class="hero__subtitle">
+            Попробуйте наши новые холодные кофейные коктейли с протеином прямо у
+            кинотеатра «Октябрь».
+          </p>
+          <a href="#menu" class="btn btn--primary">Попробовать</a>
+        </div>
+      </div>
+      <div
+        class="hero-slide"
+        style="
+          background-image:
+            linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+            url(&quot;https://unsplash.com&quot;);
+        "
+      >
+        <div class="container hero__container-content">
+          <span class="hero__badge">Свежий завоз</span>
+          <h1 class="hero__title">Ремесленный хлеб на закваске</h1>
+          <p class="hero__subtitle">
+            Каждое утро выпекаем хрустящие багеты и тартин по старинным
+            рецептам.
+          </p>
+          <a href="#menu" class="btn btn--primary">Смотреть меню</a>
+        </div>
+      </div>
+      <div class="slider-arrows">
+        <button class="arrow-btn" id="hero-prev">←</button>
+        <button class="arrow-btn" id="hero-next">→</button>
+      </div>
+    </section>
+
+    <!-- 2. БЛОК СТАТИСТИКИ (ЦИФРЫ) -->
+    <section class="stats-section" id="about">
+      <div class="container stats__grid">
+        <div class="stat-item">
+          <div class="stat-item__number">16</div>
+          <div class="stat-item__text">кофеен открыто в Минске и области</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__number">200к+</div>
+          <div class="stat-item__text">напитков продаем ежемесячно</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__number">4.9</div>
+          <div class="stat-item__text">средняя оценка на Яндекс.Картах</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. ИНТЕРАКТИВНОЕ МЕНЮ (ПОЛНАЯ ВЕРСИЯ) -->
+    <section class="menu-section" id="menu">
+      <div class="container">
+        <h2 class="section-title">Наше Меню</h2>
+
+        <!-- Переключатели вкладок -->
+        <div class="menu-tabs">
+          <button class="tab-btn active" data-tab="coffee">
+            Кофе и напитки
+          </button>
+          <button class="tab-btn" data-tab="bakery">Свежая выпечка</button>
+        </div>
+
+        <!-- Содержимое вкладок -->
+        <div class="menu-content">
+          <!-- Вкладка: Кофе -->
+          <div class="tab-content active" id="coffee">
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="menu-item__header">
+                  <span class="menu-item__name">Эспрессо</span>
+                  <span class="menu-item__line"></span>
+                  <span class="menu-item__price">4.50 BYN</span>
+                </div>
+                <p class="menu-item__desc">
+                  Чистый вкус спешелти арабики плотной экстракции.
+                </p>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__header">
+                  <span class="menu-item__name">Капучино</span>
+                  <span class="menu-item__line"></span>
+                  <span class="menu-item__price">6.50 BYN</span>
+                </div>
+                <p class="menu-item__desc">
+                  Классический баланс эспрессо и нежной глянцевой молочной пены.
+                </p>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__header">
+                  <span class="menu-item__name">Флэт Уайт</span>
+                  <span class="menu-item__line"></span>
+                  <span class="menu-item__price">7.50 BYN</span>
+                </div>
+                <p class="menu-item__desc">
+                  Насыщенный вкус: двойной эспрессо с тонким слоем бархатистого
+                  молока.
+                </p>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__header">
+                  <span class="menu-item__name">Раф Цитрус-Тимьян</span>
+                  <span class="menu-item__line"></span>
+                  <span class="menu-item__price">8.50 BYN</span>
+                </div>
+                <p class="menu-item__desc">
+                  Авторский напиток на сливках с добавлением натуральной цедры и
+                  свежего тимьяна.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Вкладка: Выпечка -->
+          <div class="tab-content" id="bakery">
+            <div class="menu-grid">
+              <div class="menu-item">
+                <div class="menu-item__header">
+                  <span class="menu-item__name">Классический круассан</span>
+                  <span class="menu-item__line"></span>
+                  <span class="menu-item__price">5.00 BYN</span>
+                </div>
+                <p class="menu-item__desc">
+                  24 слоя воздушного теста на натуральном сливочном масле. Из
+                  печи каждое утро.
+                </p>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__header">
+                  <span class="menu-item__name">Тартин на закваске</span>
+                  <span class="menu-item__line"></span>
+                  <span class="menu-item__price">7.00 BYN</span>
+                </div>
+                <p class="menu-item__desc">
+                  Ремесленный пшеничный хлеб длительной ферментации с хрустящей
+                  корочкой.
+                </p>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__header">
+                  <span class="menu-item__name"
+                    >Улитка с корицей и пеканом</span
+                  >
+                  <span class="menu-item__line"></span>
+                  <span class="menu-item__price">6.00 BYN</span>
+                </div>
+                <p class="menu-item__desc">
+                  Пряное слоеное тесто, политое тягучей домашней карамелью и
+                  обжаренным орехом.
+                </p>
+              </div>
+              <div class="menu-item">
+                <div class="menu-item__header">
+                  <span class="menu-item__name">Даниш с вишней</span>
+                  <span class="menu-item__line"></span>
+                  <span class="menu-item__price">6.50 BYN</span>
+                </div>
+                <p class="menu-item__desc">
+                  Слоёная корзинка с заварным кремом Patissiere и сочной
+                  вишневой начинкой.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. ШКОЛА БАРИСТА -->
+    <section class="school-section" id="school">
+      <div class="container school__grid">
+        <div class="school__content">
+          <h2 class="school__title">
+            Откройте для себя мир кофе с нашей школой бариста
+          </h2>
+          <p class="school__text">
+            Учим простым и понятным языком, как быть гуру в кофейном деле.
+            Гарантируем трудоустройство в нашу сеть после получения сертификата.
+          </p>
+          <ul class="school__list">
+            <li>Для новичков, готовых освоить профессию с нуля</li>
+            <li>Для опытных профессионалов, желающих прокачать навыки</li>
+            <li>Преподаватели с международным опытом более 7 лет</li>
+          </ul>
+          <a href="#order" class="btn btn--primary">Записаться на курс</a>
+        </div>
+        <div class="school__image">
+          <img src="https://unsplash.com" alt="Обучение бариста" />
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. АКЦИИ И НОВОСТИ -->
+    <section class="news-section" id="news">
+      <div class="container">
+        <h2 class="section-title">Акции и новости</h2>
+        <div class="news-grid">
+          <div class="news-card">
+            <img src="https://unsplash.com" alt="Кружки" />
+            <h3 class="news-card__title">Дарим фирменные кружки</h3>
+            <p class="news-card__text">
+              Разыгрываем три брендированные чашки среди подписчиков нашего
+              инстаграма.
+            </p>
+          </div>
+          <div class="news-card">
+            <img src="https://unsplash.com" alt="Подарок" />
+            <h3 class="news-card__title">Первому гостю кофе в подарок</h3>
+            <p class="news-card__text">
+              С 15 по 31 июля каждый день первый покупатель получает любой
+              напиток бесплатно.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6. ФОРМА ПРЕДЗАКАЗА -->
+    <section class="order-section" id="order">
+      <div class="container">
+        <div class="order-box">
+          <h2 class="order-box__title">Оставить заявку / Предзаказ</h2>
+          <form id="order-form" class="order-form">
+            <input type="text" id="form-name" placeholder="Ваше имя" required />
+            <input
+              type="tel"
+              id="form-phone"
+              placeholder="+375 (XX) XXX-XX-XX"
+              required
+            />
+            <button type="submit" class="btn btn--primary">
+              Отправить контакты
+            </button>
+          </form>
+          <div id="form-message" class="form-message"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. КОНТАКТЫ И СТРОГИЙ ФУТЕР -->
+    <footer class="main-footer" id="contacts">
+      <div class="container footer__top">
+        <div class="footer__contacts-info">
+          <h2 class="footer__headline">Контакты</h2>
+          <p>
+            <strong>Адрес главного офиса:</strong><br />Минск, пр-т
+            Независимости, 73
+          </p>
+          <p><strong>Телефон:</strong><br />+375 (44) 521-44-58</p>
+          <p><strong>Email:</strong><br />progrevcoffee@gmail.com</p>
+        </div>
+        <div class="footer__map-box">
+          <div class="map-placeholder">
+            📍 Интеграция Яндекс.Карт — Район метро Академия Наук
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <div class="container footer__bottom-container">
+          <div class="footer__legal">
+            <p>
+              Общество с ограниченной ответственностью «Про кофе» | УНП
+              193292290
+            </p>
+            <p>Регистрация в Торговом реестре РБ №532104 от 12.04.2024</p>
+          </div>
+          <div class="footer__copyright">
+            © «Зёрна & Прогрев» 2026. Все права защищены.
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+  </body>
+</html>
