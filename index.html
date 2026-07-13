@@ -17,15 +17,15 @@
     <header class="main-header">
       <button class="hamburger-cyber" id="hamburger-btn">☰</button>
 
-      <div class="container header__container">
+      <div class="container_one header__container">
         <a href="#slider"><div class="header__logo">Зёрна & Прогрев</div></a>
         <nav class="nav-links">
-          <a href="#about">О нас</a>
-          <a href="#menu">Меню</a>
-          <a href="#school">Школа бариста</a>
-          <a href="#news">Акции</a>
-          <a href="#order">Предзаказ</a>
-          <a href="#contacts">Контакты</a>
+          <a href="#about" class="nav-item">О нас</a>
+          <a href="#menu" class="nav-item">Меню</a>
+          <a href="#school" class="nav-item">Школа бариста</a>
+          <a href="#news" class="nav-item">Акции</a>
+          <a href="#order" class="nav-item">Предзаказ</a>
+          <a href="#contacts" class="nav-item">Контакты</a>
         </nav>
         <div class="header__geo">🇧🇾 Минск</div>
       </div>
@@ -34,61 +34,85 @@
     <section class="hero-slider" id="slider">
       <div class="hero-slide active hero--summer-protein">
         <div class="container hero__container-content">
-          <span class="hero__badge">Новинка сезона</span>
-          <h1 class="cyber-title-main">Вкус лета, сила белка</h1>
-          <p class="intro-text">
-            Попробуйте наши новые холодные кофейные коктейли с протеином прямо у
-            кинотеатра «Октябрь».
-          </p>
-          <a href="#menu" class="btn btn--primary">Попробовать</a>
+          <div class="hero__content-top">
+            <span class="hero__badge">Новинка сезона</span>
+            <h1 class="cyber-title-main space">Вкус лета, сила белка</h1>
+          </div>
+          <div class="hero__content-bottom">
+            <p class="intro-text space">
+              Попробуйте наши новые холодные кофейные коктейли с протеином прямо
+              у кинотеатра «Октябрь».
+            </p>
+            <a href="#menu" class="btn btn--primary">Попробовать</a>
+          </div>
         </div>
       </div>
 
       <div class="hero-slide hero--artisan-bread">
         <div class="container hero__container-content">
-          <span class="hero__badge">Свежий завоз</span>
-          <h2 class="cyber-title-section">Ремесленный хлеб на закваске</h2>
-          <p class="intro-text">
-            Каждое утро выпекаем хрустящие багеты и тартин по старинным
-            рецептам.
-          </p>
-          <a href="#menu" class="btn btn--primary">Смотреть меню</a>
+          <div class="hero__content-top">
+            <span class="hero__badge">Свежий завоз</span>
+            <h2 class="cyber-title-section space">
+              Ремесленный хлеб на закваске
+            </h2>
+          </div>
+          <div class="hero__content-bottom">
+            <p class="intro-text space">
+              Каждое утро выпекаем хрустящие багеты и тартин по старинным
+              рецептам.
+            </p>
+            <a href="#menu" class="btn btn--primary">Смотреть меню</a>
+          </div>
         </div>
       </div>
 
       <div class="hero-slide hero--coffee-strong">
         <div class="container hero__container-content">
-          <span class="hero__badge">Новый формат</span>
-          <h2 class="cyber-title-section">Кофе с характером</h2>
-          <p class="intro-text">
-            Глубокий вкус арабики, ледяная свежесть и чистая энергия —
-            премиум‑коктейль для активных.
-          </p>
-          <a href="#menu" class="btn btn--primary">Попробовать</a>
+          <div class="hero__content-top">
+            <span class="hero__badge">Новый формат</span>
+            <h2 class="cyber-title-section space">Кофе с характером</h2>
+          </div>
+          <div class="hero__content-bottom">
+            <p class="intro-text space">
+              Глубокий вкус арабики, ледяная свежесть и чистая энергия —
+              премиум‑коктейль для активных.
+            </p>
+            <a href="#menu" class="btn btn--primary">Попробовать</a>
+          </div>
         </div>
       </div>
 
       <div class="hero-slide hero--protein-coffee">
         <div class="container hero__container-content">
-          <span class="hero__badge">Сила вкуса</span>
-          <h2 class="cyber-title-section">Протеиновый холодный кофе</h2>
-          <p class="intro-text">
-            Освежающий, насыщенный, премиальный — попробуйте новый формат
-            летнего кофе.
-          </p>
-          <a href="#menu" class="btn btn--primary">Попробовать</a>
+          <div class="hero__content-top">
+            <span class="hero__badge">Сила вкуса</span>
+            <h2 class="cyber-title-section space">Протеиновый холодный кофе</h2>
+          </div>
+          <div class="hero__content-bottom">
+            <p class="intro-text space">
+              Освежающий, насыщенный, премиальный — попробуйте новый формат
+              летнего кофе.
+            </p>
+            <a href="#menu" class="btn btn--primary">Попробовать</a>
+          </div>
         </div>
       </div>
 
       <div class="hero-slide hero--cold-power">
         <div class="container hero__container-content">
-          <span class="hero__badge">Премиальная новинка</span>
-          <h2 class="cyber-title-section">Холодный кофе. Чистая сила.</h2>
-          <p class="intro-text">
-            Открой вкус лета — протеиновые кофейные коктейли с идеальной
-            текстурой и ледяной свежестью.
-          </p>
-          <a href="#menu" class="btn btn--primary">Попробовать</a>
+          <div class="hero__content-top">
+            <span class="hero__badge">Премиальная новинка</span>
+            <h2 class="cyber-title-section space">
+              Холодный кофе. Чистая сила.
+            </h2>
+          </div>
+          <div class="hero__content-bottom">
+            <p class="intro-text space">
+              Открой вкус лета — протеиновые кофейные коктейли с идеальной
+              текстурой и ледяной свежестью.
+            </p>
+            <a href="#menu" class="btn btn--primary">Попробовать</a>
+          </div>
         </div>
       </div>
       <div class="slider-arrows">

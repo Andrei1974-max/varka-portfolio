@@ -1,6 +1,7 @@
 /* =========================================================
    1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ СБРОСЫ
    ========================================================= */
+
 :root {
   --color-dark: #111111;
   --color-accent: #bc987e;
@@ -28,11 +29,22 @@ body {
 }
 
 .container {
+  display: flex;
+  flex-direction: column;
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 1.5rem;
+  gap: 50px;
 }
 
+.container_one {
+  display: flex;
+  justify-content: space-around;
+  gap: 100px;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
 /* =========================================================
    2. HEADER
    ========================================================= */
@@ -53,6 +65,7 @@ body {
 .nav-links {
   display: flex;
   flex-direction: row !important;
+  justify-content: space-around;
   align-items: center;
   gap: clamp(0.5rem, 2vw, 1.5rem);
   white-space: nowrap;
@@ -86,9 +99,40 @@ body {
   color: var(--color-dark);
 }
 
+.nav-item {
+  display: inline-block;
+  box-sizing: border-box;
+  color: #020202;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 800;
+  font-size: clamp(0.8rem, 1.2vw, 1rem);
+  padding: 10px 15px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+.nav-links {
+  display: flex;
+  flex-direction: row !important;
+  align-items: center;
+  gap: clamp(0.5rem, 2vw, 1.5rem);
+  white-space: nowrap;
+  width: auto;
+  flex: 1;
+}
+.nav-links.active {
+  right: 0;
+  box-shadow: -10px 0 30px rgba(0, 123, 196, 0.25);
+}
 /* =========================================================
    3. HERO SLIDER
    ========================================================= */
+
 .hero-slider {
   height: 100vh;
   position: relative;
@@ -105,6 +149,33 @@ body {
   align-items: center;
   opacity: 0;
   transition: opacity 0.8s ease;
+}
+
+/* Контейнер выстраивается вертикально и разводит блоки к верхнему и нижнему краям */
+.hero__container-content {
+  display: flex;
+  flex-direction: column; /* Выстраивает элементы строго друг под другом */
+  justify-content: space-between; /* Толкает топ-блок наверх, а боттом-блок в самый низ */
+  min-height: 500px; /* Задаем высоту блока, чтобы элементам было куда разъезжаться */
+  padding: 40px 0; /* Внутренние отступы, чтобы текст не прилипал к краям слайда */
+  color: var(--color-white);
+  max-width: 700px;
+}
+
+/* Настройки для верхней части */
+.hero__content-top {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: auto; /* Дополнительный толчок вниз для нижнего блока */
+}
+
+/* Настройки для нижней части */
+.hero__content-bottom {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  max-width: 500px; /* Ограничение ширины текста для красивого чтения */
 }
 
 .hero--summer-protein {
@@ -158,11 +229,6 @@ body {
   position: relative;
 }
 
-.hero__container-content {
-  color: var(--color-white);
-  max-width: 700px;
-}
-
 .hero__badge {
   background: var(--color-accent);
   padding: 0.375rem 0.75rem;
@@ -170,6 +236,17 @@ body {
   font-weight: 600;
   text-transform: uppercase;
   border-radius: 2px;
+}
+
+p.space {
+  padding-bottom: 40px;
+}
+
+h1.space {
+  margin-top: 40px;
+}
+h2.space {
+  margin-top: 40px;
 }
 
 /* Кнопки */
@@ -409,7 +486,7 @@ body {
 
 .news-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(21.25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: 2.5rem;
 }
 
@@ -536,70 +613,6 @@ body {
     border: 1px solid ye;
   }
 
-  .nav-links.active {
-    display: flex !important;
-    flex-direction: column !important;
-    align-items: flex-start !important;
-    position: absolute !important;
-    top: 6.875rem !important;
-    right: 0 !important;
-    left: auto !important;
-    height: auto !important;
-    max-height: calc(100vh - 6.875rem) !important;
-    width: 18.75rem !important;
-    background-color: #0b0b0b !important;
-    border-left: 1px solid #1c1c1c !important;
-    border-bottom: 2px solid #007bc4 !important;
-    overflow-y: auto !important;
-    padding: 1.25rem 0 !important;
-    gap: 0.3125rem;
-    z-index: 999999 !important;
-  }
-  .nav-links.active .nav-item {
-    display: block !important;
-    width: calc(100% - 2.5rem) !important;
-    margin: 0.4375rem auto !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    text-align: center !important;
-    padding: 0.875rem 0 !important;
-    border-radius: 4px !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    text-decoration: none !important;
-    transition: all 0.25s ease-in-out !important;
-  }
-  .nav-links.active .nav-item:hover,
-  .nav-links.active .nav-item.active {
-    background-color: #111111 !important;
-    color: #007bc4 !important;
-  }
-  .nav-links.active .btn-sales {
-    display: block !important;
-    width: calc(100% - 2.5rem) !important;
-    margin: 0.4375rem auto !important;
-    background-color: #007bc4 !important;
-    color: #ffffff !important;
-    font-weight: 700 !important;
-    text-align: center !important;
-    padding: 0.875rem 0 !important;
-    border-radius: 4px !important;
-    border: 1px solid #33b5ff !important;
-    box-shadow: 0 0.25rem 0.9375rem rgba(0, 123, 196, 0.4) !important;
-    text-transform: uppercase !important;
-    letter-spacing: 1px !important;
-    text-decoration: none !important;
-    transition: all 0.25s ease-in-out !important;
-  }
-  .nav-links.active .btn-sales:hover {
-    background-color: #064569 !important;
-    box-shadow: 0 0.375rem 1.25rem #33b5ff !important;
-    transform: scale(1.02) !important;
-    opacity: 1 !important;
-    text-shadow: 0 0 12px #33b5ff;
-    border-color: rgb(255, 255, 0) !important;
-  }
-
   .stats__grid,
   .school__grid,
   .footer__top {
@@ -637,7 +650,6 @@ h2.cyber-title-section {
   font-weight: 700;
   letter-spacing: 0.5px;
   text-transform: uppercase;
-  margin-bottom: 1.875rem;
 }
 h2.topic {
   text-decoration: underline;
