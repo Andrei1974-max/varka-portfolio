@@ -142,10 +142,13 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-position: center;
-  background-size: cover;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   display: flex;
   align-items: center;
+  justify-content: center;
+  padding: 0 2rem;
   opacity: 0;
   transition: opacity 0.8s ease;
 }
@@ -154,9 +157,10 @@ body {
 .hero__container-content {
   display: flex;
   flex-direction: column; /* Выстраивает элементы строго друг под другом */
-  justify-content: space-between; /* Толкает топ-блок наверх, а боттом-блок в самый низ */
-  min-height: 500px; /* Задаем высоту блока, чтобы элементам было куда разъезжаться */
-  padding: 40px 0; /* Внутренние отступы, чтобы текст не прилипал к краям слайда */
+  justify-content: center; /* центрируем текст */
+  align-items: flex-start;
+  min-height: 500px;
+  padding: 60px 0; /* Внутренние отступы, чтобы текст не прилипал к краям слайда */
   color: var(--color-white);
   max-width: 700px;
 }
@@ -166,7 +170,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  margin-bottom: auto; /* Дополнительный толчок вниз для нижнего блока */
+  margin-bottom: auto;
 }
 
 /* Настройки для нижней части */
@@ -335,6 +339,7 @@ h2.space {
   flex-direction: column;
   gap: 1.875rem;
 }
+
 .one {
   display: flex;
   flex-direction: row;
