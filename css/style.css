@@ -284,11 +284,11 @@ h2.space {
 /* Стрелки */
 .slider-arrows {
   position: absolute;
-  bottom: 1.875rem;
+  bottom: 9.375rem;
   left: 1.5rem;
   z-index: 10;
   display: flex;
-  gap: 10px;
+  gap: 3.125rem;
 }
 
 .arrow-btn {
