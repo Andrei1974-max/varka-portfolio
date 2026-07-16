@@ -14,22 +14,25 @@
   </head>
   <body>
     <!-- НАВИГАЦИЯ (HEADER) -->
+    <div class="top-trigger"></div>
     <header class="main-header">
-      <button class="hamburger-cyber" id="hamburger-btn">☰</button>
-
-      <div class="container_one header__container">
+      <nav class="main-nav">
         <a href="#slider"><div class="header__logo">Зёрна & Прогрев</div></a>
-        <nav class="nav-links">
+
+        <button class="hamburger-cyber" id="hamburger-btn">☰</button>
+
+        <div class="nav-links">
           <a href="#about" class="nav-item">О нас</a>
           <a href="#menu" class="nav-item">Меню</a>
           <a href="#school" class="nav-item">Школа бариста</a>
           <a href="#news" class="nav-item">Акции</a>
           <a href="#order" class="nav-item">Предзаказ</a>
           <a href="#contacts" class="nav-item">Контакты</a>
-        </nav>
+        </div>
         <div class="header__geo">🇧🇾 Минск</div>
-      </div>
+      </nav>
     </header>
+
     <!-- 1. ГЛАВНЫЙ СЛАЙДЕР (HERO) -->
     <section class="hero-slider" id="slider">
       <div class="hero-slide active hero--summer-protein">
@@ -424,8 +427,7 @@
         <div class="footer__map-box">
           <iframe
             src="https://yandex.ru/map-widget/v1/?um=constructor%3Abcb11c991dcfffbc40817f39fe776dbf4539c82bf5f9b15f3cb3555274184989&amp;source=constructor"
-            width="600"
-            height="400"
+            class="map-frame"
             frameborder="0"
           ></iframe>
         </div>

@@ -26,27 +26,20 @@ body {
   color: var(--color-dark);
   background-color: var(--color-white);
   line-height: 1.6;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-around;
 }
 
 .container {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 20px auto;
   padding: 0 1.5rem;
 }
 
-.container_one {
-  display: flex;
-  justify-content: space-around;
-  gap: 100px;
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 1.5rem;
+a {
+  text-decoration: none;
 }
+
 /* =========================================================
    2. HEADER
    ========================================================= */
@@ -64,6 +57,28 @@ body {
   z-index: 2000000;
 }
 
+.main-nav {
+  background-color: #000000;
+  border-bottom: 1px solid #222222;
+  min-height: 100px;
+  width: 100%;
+  height: auto;
+  padding: 20px 40px;
+  margin: 0;
+  box-sizing: border-box;
+  gap: 15px !important;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  z-index: 9999;
+}
+
+.header__geo {
+  white-space: nowrap;
+}
+
 .nav-links {
   display: flex;
   flex-direction: row !important;
@@ -78,10 +93,46 @@ body {
   right: 0;
   box-shadow: -0.625rem 0 1.875rem rgba(0, 123, 196, 0.25);
 }
+.nav-item {
+  display: inline-block;
+  box-sizing: border-box;
+  color: #ffffff;
+  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 800;
+  font-size: clamp(0.75rem, 1.2vw, 1rem);
+  padding: clamp(0.4rem, 1vw, 0.625rem) clamp(0.6rem, 1.2vw, 0.9375rem);
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition:
+    color 0.2s ease,
+    border-color 0.2s ease,
+    text-shadow 0.2s ease;
+  gap: clamp(0.3rem, 1vw, 0.8rem);
+}
+
+.nav-item.active {
+  color: #007bc4 !important;
+  text-shadow: 0 0 12px rgba(0, 123, 196, 0.6) !important;
+  font-weight: 800 !important;
+  opacity: 1 !important;
+}
+
+.nav-item:hover,
+.header__logo:hover {
+  color: #f9fafb !important;
+  background-color: #555;
+  opacity: 1 !important;
+  text-shadow: 0 0 12px #33b5ff;
+  border: 1px solid yellow !important;
+}
 
 .main-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   background-color: var(--color-white);
-  padding: 1.2rem 0;
   border-bottom: 1px solid #eeeeee;
   position: sticky;
   top: 0;
@@ -92,51 +143,36 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 6.25rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  flex-wrap: nowrap !important;
+  z-index: 9999;
+  position: relative !important;
 }
 
 .header__logo {
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: clamp(1rem, 2vw, 1.3rem);
   letter-spacing: 1px;
   color: var(--color-dark);
-}
-
-.nav-item {
-  display: inline-block;
-  box-sizing: border-box;
-  color: #020202;
-  text-shadow: 0 0 8px rgba(255, 255, 255, 0.2);
-  text-decoration: none;
-  white-space: nowrap;
-  font-weight: 800;
-  font-size: clamp(0.8rem, 1.2vw, 1rem);
-  padding: 10px 15px;
+  padding: clamp(0.4rem, 1vw, 0.625rem) clamp(0.6rem, 1.2vw, 0.9375rem);
   border: 1px solid transparent;
+  white-space: nowrap;
   border-radius: 4px;
   transition:
     color 0.2s ease,
     border-color 0.2s ease,
     text-shadow 0.2s ease;
 }
-.nav-links {
-  display: flex;
-  flex-direction: row !important;
-  align-items: center;
-  gap: clamp(0.5rem, 2vw, 1.5rem);
-  white-space: nowrap;
-  width: auto;
-  flex: 1;
-}
-.nav-links.active {
-  right: 0;
-  box-shadow: -10px 0 30px rgba(0, 123, 196, 0.25);
-}
+
 /* =========================================================
    3. HERO SLIDER
    ========================================================= */
 
 .hero-slider {
-  height: 100vh; /* Изменено с 90vh на 100vh */
+  height: clamp(80vh, 100vh, 100vh);
   width: 100%;
   position: relative;
   overflow: hidden;
@@ -164,25 +200,27 @@ body {
   justify-content: center; /* центрируем текст */
   align-items: flex-start;
   min-height: 500px;
-  padding: 60px 0; /* Внутренние отступы, чтобы текст не прилипал к краям слайда */
+  padding: clamp(2rem, 5vw, 3.75rem) 0;
   color: var(--color-white);
-  max-width: 700px;
+  max-width: clamp(500px, 50vw, 700px);
 }
 
 /* Настройки для верхней части */
 .hero__content-top {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-bottom: auto;
+  margin-top: 100px;
 }
 
 /* Настройки для нижней части */
 .hero__content-bottom {
+  max-width: clamp(300px, 40vw, 500px);
+}
+
+.hero__content-top,
+.hero__content-bottom {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
-  max-width: 500px; /* Ограничение ширины текста для красивого чтения */
 }
 
 .hero--summer-protein {
@@ -236,35 +274,26 @@ body {
   position: relative;
 }
 
-.hero__badge {
-  background: var(--color-accent);
-  padding: 0.375rem 0.75rem;
-  font-size: 0.8rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  border-radius: 2px;
-}
-
 p.space {
-  padding-bottom: 40px;
+  padding-bottom: 2.5rem;
 }
 
 h1.space {
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 h2.space {
-  margin-top: 40px;
+  margin-top: 2.5rem;
 }
 
 /* Кнопки */
 .btn {
   display: inline-block;
-  padding: 1rem 2.25rem;
+  padding: clamp(0.3125rem, 1.5vw, 0.2rem) clamp(1.2rem, 2.5vw, 2.25rem);
   font-weight: 600;
   text-decoration: none;
   border-radius: 4px;
   text-transform: uppercase;
-  font-size: 0.85rem;
+  font-size: clamp(0.75rem, 1vw, 0.85rem);
   letter-spacing: 1px;
   border: none;
   cursor: pointer;
@@ -284,21 +313,21 @@ h2.space {
 /* Стрелки */
 .slider-arrows {
   position: absolute;
-  bottom: 9.375rem;
+  bottom: clamp(4rem, 8vw, 9.375rem);
   left: 1.5rem;
   z-index: 10;
   display: flex;
-  gap: 3.125rem;
+  gap: clamp(1rem, 4vw, 3.125rem);
 }
 
 .arrow-btn {
   background: rgba(255, 255, 255, 0.2);
   border: none;
-  width: 3.125rem;
-  height: 3.125rem;
+  width: clamp(2.5rem, 3vw, 3.125rem);
+  height: clamp(2.5rem, 3vw, 3.125rem);
   border-radius: 50%;
   color: var(--color-white);
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 1.5vw, 1.2rem);
   cursor: pointer;
   transition: background 0.3s;
 }
@@ -313,14 +342,14 @@ h2.space {
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: calc(4rem + 1vw);
+  gap: clamp(2rem, 4vw, 4rem);
 }
 .service-card {
   border: 1px solid #222;
   border-radius: 4px;
-  padding: 1.875rem;
+  padding: clamp(1rem, 3vw, 1.875rem);
   transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  max-width: 670px;
+  max-width: clamp(300px, 50vw, 670px);
   position: relative;
   z-index: 2;
 }
@@ -333,7 +362,7 @@ h2.space {
 }
 
 .stats-section {
-  padding: 6.25rem 0;
+  padding: clamp(3rem, 8vw, 6.25rem) 0;
   background: var(--color-light-bg);
 }
 
@@ -351,7 +380,7 @@ h2.space {
 }
 
 .stat-item__number {
-  font-size: 4.5rem;
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 700;
   color: var(--color-accent);
   line-height: 1;
@@ -361,14 +390,14 @@ h2.space {
 .stat-item__text {
   font-weight: 500;
   color: var(--color-gray);
-  max-width: 250px;
+  max-width: clamp(150px, 30vw, 250px);
 }
 
 /* =========================================================
    5. МЕНЮ (ТАБЫ + КАРТОЧКИ)
    ========================================================= */
 .menu-section {
-  padding: 8.4375rem 0;
+  padding: clamp(4rem, 10vw, 8.4375rem) 0;
   background-color: var(--color-white);
 }
 
@@ -376,16 +405,16 @@ h2.space {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  gap: 0.9375rem;
-  margin-bottom: 3.125rem;
+  gap: clamp(0.5rem, 2vw, 0.9375rem);
+  margin-bottom: clamp(1.5rem, 5vw, 3.125rem);
 }
 
 .tab-btn {
-  padding: 0.875rem 2rem;
+  padding: clamp(0.5rem, 1.5vw, 0.875rem) clamp(1rem, 3vw, 2rem);
   background: transparent;
   border: 1px solid #e0e0e0;
   font-family: var(--font-main);
-  font-size: 0.95rem;
+  font-size: clamp(0.8rem, 1.2vw, 0.95rem);
   font-weight: 600;
   border-radius: 1.875rem;
   cursor: pointer;
@@ -410,7 +439,7 @@ h2.space {
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
-  gap: 2.5rem 3.125rem;
+  gap: clamp(1rem, 3vw, 2.5rem) clamp(1rem, 4vw, 3.125rem);
 }
 .menu-item {
   background: transparent;
@@ -423,47 +452,18 @@ h2.space {
   margin-bottom: 8px;
 }
 
-.menu-item__name {
-  font-weight: 700;
-  font-size: 1.15rem;
-  color: var(--color-dark);
-  padding-right: 0.625rem;
-  background: var(--color-white);
-  position: relative;
-  z-index: 2;
-}
-
-.menu-item__line {
-  flex-grow: 1;
-  border-bottom: 2px dotted #e0e0e0;
-  position: relative;
-  top: -4px;
-  margin: 0 5px;
-}
-
-.menu-item__price {
-  font-weight: 700;
-  color: var(--color-accent);
-  font-size: 1.15rem;
-  padding-left: 0.625rem;
-  background: var(--color-white);
-  position: relative;
-  z-index: 2;
-  white-space: nowrap;
-}
-
 /* =========================================================
    6. ШКОЛА БАРИСТА
    ========================================================= */
 .school-section {
-  padding: 6.25rem 0;
+  padding: clamp(3rem, 8vw, 6.25rem) 0;
   background: #faf8f5;
 }
 
 .school__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3.75rem;
+  gap: clamp(1.5rem, 5vw, 3.75rem);
   align-items: center;
 }
 
@@ -473,14 +473,14 @@ h2.space {
 }
 
 .school__list li {
-  margin-bottom: 0.75rem;
+  margin-bottom: clamp(0.4rem, 1vw, 0.75rem);
   font-weight: 500;
 }
 
 .school__image img {
   width: auto;
   height: 100%;
-  max-height: 500px;
+  max-height: clamp(250px, 50vw, 500px);
   border-radius: 0.75rem;
   box-shadow: 0 0.9375rem 2.5rem rgba(0, 0, 0, 0.05);
 }
@@ -489,28 +489,29 @@ h2.space {
    7. АКЦИИ И НОВОСТИ
    ========================================================= */
 .news-section {
-  padding: 6.25rem 0;
+  padding: clamp(3rem, 8vw, 6.25rem) 0;
 }
 
 .news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-  gap: 2.5rem;
+  gap: clamp(1rem, 3vw, 2.5rem);
 }
 
 .news-card {
   background: var(--color-white);
+  width: 300px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.news-card img {
+img.cup {
   width: 100%;
   height: auto;
-  max-width: 300px;
-  margin: 3.125rem;
+  max-width: clamp(150px, 40vw, 250px);
+  margin: clamp(1rem, 5vw, 3.125rem);
   object-fit: cover;
   border-radius: 8px;
 }
@@ -520,12 +521,14 @@ h2.space {
    ========================================================= */
 
 .order-section {
-  padding: 13.75rem 0;
+  padding: clamp(6rem, 12vw, 13.75rem) 0;
   background: var(--color-light-bg);
 }
-
+.order-box h2 {
+  margin-bottom: 5.75rem;
+}
 .order-box {
-  max-width: 550px;
+  max-width: clamp(300px, 50vw, 550px);
   margin: 0 auto;
   text-align: center;
 }
@@ -533,15 +536,15 @@ h2.space {
 .order-form {
   display: flex;
   flex-direction: column;
-  gap: 0.9375rem;
+  gap: clamp(0.5rem, 2vw, 0.9375rem);
 }
 
 .order-form input {
-  padding: 1rem 1.25rem;
+  padding: clamp(0.7rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.25rem);
   border-radius: 4px;
   border: 1px solid #ddd;
   font-family: var(--font-main);
-  font-size: 1rem;
+  font-size: clamp(0.9rem, 1.2vw, 1rem);
   outline: none;
 }
 
@@ -557,17 +560,17 @@ h2.space {
 .main-footer {
   background: var(--color-dark);
   color: var(--color-white);
-  padding-top: 12.5rem;
+  padding-top: clamp(6rem, 15vw, 12.5rem);
 }
 
 .footer__top {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3.75rem;
+  gap: clamp(1.5rem, 5vw, 3.75rem);
   align-items: center;
   justify-content: center;
   padding-bottom: 3.75rem;
-  border-bottom: 1px solid #222;
+  padding-bottom: clamp(1.5rem, 5vw, 3.75rem);
 }
 
 .footer__contacts-info strong {
@@ -576,7 +579,7 @@ h2.space {
 
 .footer__map-box {
   background: #1a1a1a;
-  height: 20rem;
+  height: clamp(10rem, 30vw, 20rem);
   border-radius: 4px;
   display: flex;
   align-items: center;
@@ -590,26 +593,135 @@ h2.space {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: clamp(1rem, 3vw, 2rem);
+}
+.map-frame {
+  /* Ширина: минимум 17.5rem (280px), плавно растет как 50vw, максимум 37.5rem (600px) */
+  width: clamp(17.5rem, 60vw, 37.5rem);
+
+  /* Высота: минимум 12.5rem (200px), плавно растет как 30vw, максимум 25rem (400px) */
+  height: clamp(12.5rem, 40vw, 25rem);
+
+  display: block;
+  margin: 0 auto; /* Центрирует карту по горизонтали, если нужно */
 }
 
 /* =========================================================
-   10. АДАПТИВНОСТЬ
+   10. Шрифты
    ========================================================= */
-@media (max-width: 890px) {
+
+h1.cyber-title-main {
+  word-wrap: break-word;
+  width: 100%;
+  font-size: clamp(1.4rem, 3vw, 2.8rem);
+  line-height: 1.2;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  color: #ffffff;
+}
+h2.cyber-title-section {
+  font-size: clamp(1rem, 2.5vw, 1.6rem);
+  line-height: 1.3;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+h2.topic {
+  text-decoration: underline;
+  text-decoration-color: white;
+  text-underline-offset: 3px;
+  text-align: center;
+}
+
+p.intro-text,
+li {
+  font-size: clamp(0.85rem, 1.2vw, 1.1rem);
+  line-height: 1.6;
+  color: #b3b3b3;
+}
+span.hero__badge {
+  background: var(--color-accent);
+  padding: clamp(0.3125rem, 1.5vw, 0.2rem) clamp(1.2rem, 2.5vw, 2.25rem);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  border-radius: 2px;
+}
+span.menu-item__name {
+  font-weight: 700;
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  color: var(--color-dark);
+  padding-right: 0.625rem;
+  background: var(--color-white);
+  position: relative;
+  z-index: 2;
+}
+span.menu-item__line {
+  flex-grow: 1;
+  border-bottom: 2px dotted #e0e0e0;
+  position: relative;
+  top: -4px;
+  margin: 0 5px;
+}
+span.menu-item__price {
+  font-weight: 700;
+  color: var(--color-accent);
+  font-size: clamp(1rem, 1.5vw, 1.15rem);
+  padding-left: 0.625rem;
+  background: var(--color-white);
+  position: relative;
+  z-index: 2;
+  white-space: nowrap;
+}
+/* =========================================================
+   11. АДАПТИВНОСТЬ
+   ========================================================= */
+@media (max-width: 1300px) {
   .header__geo {
     display: none;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 910px) {
   .nav-links {
     display: none;
+    order: 4;
   }
+
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 0.9375rem;
+  }
+
+  p.space {
+    padding-bottom: 2.5rem;
+    margin-bottom: 30px;
+  }
+
+  /* Нацеливаемся на саму сетку новостей */
+  .news-grid {
+    display: flex !important;
+    flex-direction: column !important; /* Разворачивает карточки строго вертикально */
+    width: 100% !important;
+    gap: 2rem !important; /* Делает аккуратный отступ между карточками */
+  }
+
+  /* Сами карточки новостей */
+  .news-card {
+    position: static !important; /* Возвращает карточки в общий поток */
+    width: 100% !important; /* Карточка займет всю ширину экрана */
+  }
+
   .hamburger-cyber {
     display: inline-block !important;
-    order: 2;
+    order: 3;
     font-size: 1.375rem !important;
-    color: #ffffff !important;
+    color: #fffcfc !important;
     cursor: pointer !important;
     padding: 0 0.25rem !important;
     width: auto !important;
@@ -621,11 +733,75 @@ h2.space {
     border: 1px solid ye;
   }
 
+  .school__content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  h2.topic {
+    margin-bottom: 20px;
+  }
+
+  .header__logo {
+    order: 1; /* логотип остаётся слева */
+  }
+  .nav-links.active {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    position: absolute !important;
+    top: 6.875rem !important;
+    right: 0 !important;
+    left: auto !important;
+    height: auto !important;
+    max-height: calc(100vh - 6.875rem) !important;
+    width: 18.75rem !important;
+    background-color: #0b0b0b !important;
+    border-left: 1px solid #1c1c1c !important;
+    border-bottom: 2px solid #007bc4 !important;
+    overflow-y: auto !important;
+    padding: 1.25rem 0 !important;
+    gap: 0.3125rem;
+    z-index: 999999 !important;
+  }
+  .nav-links.active .nav-item {
+    display: block !important;
+    width: calc(100% - 2.5rem) !important;
+    margin: 0.4375rem auto !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+    text-align: center !important;
+    padding: 0.875rem 0 !important;
+    border-radius: 4px !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    text-decoration: none !important;
+    transition: all 0.25s ease-in-out !important;
+  }
+  .nav-links.active .nav-item:hover,
+  .nav-links.active .nav-item.active {
+    background-color: #111111 !important;
+    color: #007bc4 !important;
+  }
+
+  .main-nav {
+    position: relative !important;
+  }
   .stats__grid,
   .school__grid,
-  .footer__top {
+  .footer__top,
+  .grid-container,
+  .one {
     grid-template-columns: 1fr;
     gap: 2.5rem;
+  }
+
+  .one {
+    flex-direction: column !important; /* Разворачивает элементы внутри .one сверху вниз */
+    align-items: center; /* Центрирует цифры по горизонтали */
+    gap: 2rem; /* Делает аккуратные отступы между блоками цифр */
   }
 
   .menu-grid {
@@ -639,91 +815,26 @@ h2.space {
   .hero__actions {
     flex-direction: column;
   }
-}
 
-/* ======================================================== */
+  .footer__map-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 
-h1.cyber-title-main {
-  word-wrap: break-word;
-  width: 100%;
-  font-size: clamp(1.4rem, 3vw + 0.5rem, 2.8rem);
-  line-height: 1.2;
-  font-weight: 800;
-  letter-spacing: -0.5px;
-  color: #ffffff;
-}
-h2.cyber-title-section {
-  font-size: clamp(1rem, 2vw, 1.6rem);
-  line-height: 1.3;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  text-transform: uppercase;
-}
-h2.topic {
-  text-decoration: underline;
-  text-decoration-color: white;
-  text-underline-offset: 3px;
-  text-align: center;
-}
-
-h4.tech-tag-sub {
-  font-size: clamp(0.7rem, 1vw, 0.9rem);
-  line-height: 1.4;
-  font-weight: 500;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-}
-p.intro-text,
-li {
-  font-size: clamp(0.85rem, 1.2vw, 1.1rem);
-  line-height: 1.6;
-  color: #b3b3b3;
-}
-p.one-second {
-  margin-top: 1.25rem;
-}
-p.conect {
-  margin-top: 1.25rem;
-}
-span.logo-text {
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 800 !important;
-  color: #ffffff;
-  white-space: nowrap;
-  letter-spacing: 1px;
-  padding: 0.625rem;
-  border-radius: 4px;
-  transition: 0.25s ease;
-}
-
-span.blue-neon {
-  color: #007bc4;
-  text-shadow: 0 0 0.625rem rgba(0, 123, 196, 0.5);
-}
-span.info-label {
-  font-size: clamp(0.65rem, 1vw, 0.85rem);
-  font-weight: 700;
-  color: #007bc4;
-  letter-spacing: 2px;
-}
-span.msg-icon {
-  font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-}
-span.case-status {
-  color: #555;
-  font-size: clamp(0.65rem, 1vw, 0.85rem);
-  font-family: monospace;
-}
-span.input-tag {
-  font-size: clamp(0.65rem, 1vw, 0.85rem);
-  font-weight: 700;
-  color: #555555;
-  letter-spacing: 1px;
-  white-space: nowrap;
-}
-span.lang-current {
-  color: #33b5ff;
-  font-weight: bold;
-  font-size: clamp(0.75rem, 1.2vw, 1rem);
-  text-shadow: 0 0 0.625rem rgba(51, 181, 255, 0.4);
+  .hero-slide,
+  .stats-section,
+  .menu-section,
+  .school-section,
+  .news-section,
+  .order-section,
+  .main-footer {
+    min-height: 100vh; /* Секция занимает ровно весь экран */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрирует форму по вертикали внутри секции */
+    align-items: center; /* Центрирует форму по горизонтали внутри секции */
+    box-sizing: border-box;
+    padding: 4rem 1rem; /* Защитные отступы, чтобы контент не прилипал к краям */
+  }
 }

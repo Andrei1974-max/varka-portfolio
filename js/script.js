@@ -128,3 +128,45 @@ document.addEventListener("DOMContentLoaded", () => {
 
   animatedItems.forEach((item) => observer.observe(item));
 });
+
+// 👁️ СЛЕЖЕНИЕ ЗА ШАПКОЙ
+// 👁️ СЛЕЖЕНИЕ ЗА ШАПКОЙ
+const header = document.querySelector("header");
+const topTrigger = document.querySelector(".top-trigger");
+
+if (header && topTrigger) {
+  const headerObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) {
+          // Стили для черной шапки при скролле
+          header.style.background = "#000000";
+          header.style.borderBottom = "1px solid #007bc4";
+          header.style.boxShadow = "0 5px 20px rgba(0, 123, 196, 0.15)";
+
+          // Делаем текст ссылок и логотипа белым, чтобы он не сливался
+          header
+            .querySelectorAll("a, .header__logo, .header__geo")
+            .forEach((el) => {
+              el.style.color = "#ffffff";
+            });
+        } else {
+          // Стили для прозрачной шапки в самом верху страницы
+          header.style.background = "transparent";
+          header.style.borderBottom = "1px solid #1a1a1a";
+          header.style.boxShadow = "none";
+
+          // Возвращаем исходный темный цвет текста (замените #1a1a1a на ваш цвет, если нужно)
+          header
+            .querySelectorAll("a, .header__logo, .header__geo")
+            .forEach((el) => {
+              el.style.color = "#ffffff";
+            });
+        }
+      });
+    },
+    { rootMargin: "50px 0px 0px 0px" },
+  );
+
+  headerObserver.observe(topTrigger);
+} // Скобка закрытия условия if (header && topTrigger) теперь на месте!
