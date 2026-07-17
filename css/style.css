@@ -1,7 +1,3 @@
-/* =========================================================
-   1. ПЕРЕМЕННЫЕ И БАЗОВЫЕ СБРОСЫ
-   ========================================================= */
-
 :root {
   --color-dark: #111111;
   --color-accent: #bc987e;
@@ -10,24 +6,20 @@
   --color-white: #ffffff;
   --font-main: "Montserrat", sans-serif;
 }
-
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-
 html {
   scroll-behavior: smooth;
 }
-
 body {
   font-family: var(--font-main);
   color: var(--color-dark);
   background-color: var(--color-white);
   line-height: 1.6;
 }
-
 .container {
   display: flex;
   flex-direction: column;
@@ -35,14 +27,9 @@ body {
   margin: 20px auto;
   padding: 0 1.5rem;
 }
-
 a {
   text-decoration: none;
 }
-
-/* =========================================================
-   2. HEADER
-   ========================================================= */
 .hamburger-cyber {
   display: none;
   font-size: clamp(1.2rem, 2.5vw, 1.75rem);
@@ -56,7 +43,6 @@ a {
   position: relative;
   z-index: 2000000;
 }
-
 .main-nav {
   background-color: #000000;
   border-bottom: 1px solid #222222;
@@ -74,11 +60,9 @@ a {
   flex-wrap: nowrap !important;
   z-index: 9999;
 }
-
 .header__geo {
   white-space: nowrap;
 }
-
 .nav-links {
   display: flex;
   flex-direction: row !important;
@@ -111,14 +95,12 @@ a {
     text-shadow 0.2s ease;
   gap: clamp(0.3rem, 1vw, 0.8rem);
 }
-
 .nav-item.active {
   color: #007bc4 !important;
   text-shadow: 0 0 12px rgba(0, 123, 196, 0.6) !important;
   font-weight: 800 !important;
   opacity: 1 !important;
 }
-
 .nav-item:hover,
 .header__logo:hover {
   color: #f9fafb !important;
@@ -127,7 +109,6 @@ a {
   text-shadow: 0 0 12px #33b5ff;
   border: 1px solid yellow !important;
 }
-
 .main-header {
   display: flex;
   align-items: center;
@@ -138,7 +119,6 @@ a {
   top: 0;
   z-index: 100;
 }
-
 .header__container {
   display: flex;
   justify-content: space-between;
@@ -151,7 +131,6 @@ a {
   z-index: 9999;
   position: relative !important;
 }
-
 .header__logo {
   font-weight: 700;
   font-size: clamp(1rem, 2vw, 1.3rem);
@@ -166,18 +145,12 @@ a {
     border-color 0.2s ease,
     text-shadow 0.2s ease;
 }
-
-/* =========================================================
-   3. HERO SLIDER
-   ========================================================= */
-
 .hero-slider {
   height: clamp(80vh, 100vh, 100vh);
   width: 100%;
   position: relative;
   overflow: hidden;
 }
-
 .hero-slide {
   position: absolute;
   width: 100%;
@@ -192,30 +165,23 @@ a {
   opacity: 0;
   transition: opacity 0.8s ease;
 }
-
-/* Контейнер выстраивается вертикально и разводит блоки к верхнему и нижнему краям */
 .hero__container-content {
   display: flex;
-  flex-direction: column; /* Выстраивает элементы строго друг под другом */
-  justify-content: space-between; /* центрируем текст */
+  flex-direction: column;
+  justify-content: space-between;
   align-items: flex-start;
   min-height: 500px;
   padding: clamp(2rem, 5vw, 3.75rem) 0;
   color: var(--color-white);
   max-width: clamp(500px, 50vw, 700px);
 }
-
-/* Настройки для верхней части */
 .hero__content-top {
   margin-top: 100px;
 }
-
-/* Настройки для нижней части */
 .hero__content-bottom {
   max-width: clamp(300px, 40vw, 500px);
   margin-top: 150px;
 }
-
 .hero__content-top,
 .hero__content-bottom {
   display: flex;
@@ -223,7 +189,6 @@ a {
   justify-content: center;
   align-items: flex-start;
 }
-
 .hero--summer-protein {
   background-image:
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
@@ -249,7 +214,6 @@ a {
     linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
     url(../pfoto/Coffee_05.png);
 }
-
 .arrow-btn {
   background: rgba(0, 0, 0, 0.35);
   border: none;
@@ -264,29 +228,23 @@ a {
   align-items: center;
   justify-content: center;
 }
-
 .arrow-btn:hover {
   background: var(--color-accent);
   transform: translateY(-2px);
 }
-
 .hero-slide.active {
   opacity: 1;
   position: relative;
 }
-
 p.gap-bottom {
   padding-bottom: 2.5rem;
 }
-
 h1.gap-top {
   margin-top: 2.5rem;
 }
 h2.air-box {
   margin-top: 2.5rem;
 }
-
-/* Кнопки */
 .btn {
   display: inline-block;
   padding: clamp(0.3125rem, 1.5vw, 0.2rem) clamp(1.2rem, 2.5vw, 2.25rem);
@@ -300,18 +258,14 @@ h2.air-box {
   cursor: pointer;
   transition: all 0.3s;
 }
-
 .btn--primary {
   background: var(--color-accent);
   color: var(--color-white);
 }
-
 .btn--primary:hover {
   background: #a37f66;
   transform: translateY(-2px);
 }
-
-/* Стрелки */
 .slider-arrows {
   position: absolute;
   bottom: clamp(4rem, 8vw, 9.375rem);
@@ -321,7 +275,6 @@ h2.air-box {
   display: flex;
   gap: clamp(1rem, 4vw, 3.125rem);
 }
-
 .arrow-btn {
   background: rgba(255, 255, 255, 0.2);
   border: none;
@@ -333,14 +286,9 @@ h2.air-box {
   cursor: pointer;
   transition: background 0.3s;
 }
-
 .arrow-btn:hover {
   background: var(--color-accent);
 }
-
-/* =========================================================
-   4. СТАТИСТИКА
-   ========================================================= */
 .grid-container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -362,25 +310,21 @@ h2.air-box {
   z-index: 5;
   text-decoration: none;
 }
-
 .stats-section {
   padding: clamp(3rem, 8vw, 6.25rem) 0;
   background: var(--color-light-bg);
 }
-
 .stats__grid {
   display: flex;
   justify-content: space-around;
   flex-direction: column;
   gap: 1.875rem;
 }
-
 .one {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
 }
-
 .stat-item__number {
   font-size: clamp(2.5rem, 5vw, 4.5rem);
   font-weight: 700;
@@ -388,21 +332,15 @@ h2.air-box {
   line-height: 1;
   margin-bottom: 0.625rem;
 }
-
 .stat-item__text {
   font-weight: 500;
   color: var(--color-gray);
   max-width: clamp(150px, 30vw, 250px);
 }
-
-/* =========================================================
-   5. МЕНЮ (ТАБЫ + КАРТОЧКИ)
-   ========================================================= */
 .menu-section {
   padding: clamp(4rem, 10vw, 8.4375rem) 0;
   background-color: var(--color-white);
 }
-
 .menu-tabs {
   display: flex;
   justify-content: space-around;
@@ -410,7 +348,6 @@ h2.air-box {
   gap: clamp(0.5rem, 2vw, 0.9375rem);
   margin-bottom: clamp(1.5rem, 5vw, 3.125rem);
 }
-
 .tab-btn {
   padding: clamp(0.5rem, 1.5vw, 0.875rem) clamp(1rem, 3vw, 2rem);
   background: transparent;
@@ -422,22 +359,18 @@ h2.air-box {
   cursor: pointer;
   transition: all 0.3s ease;
 }
-
 .tab-btn.active,
 .tab-btn:hover {
   background: var(--color-dark);
   color: var(--color-white);
   border-color: var(--color-dark);
 }
-
 .tab-content {
   display: none;
 }
-
 .tab-content.active {
   display: block;
 }
-
 .menu-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
@@ -447,38 +380,29 @@ h2.air-box {
   background: transparent;
   padding: 0.625rem 0;
 }
-
 .menu-item__header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 8px;
 }
-
-/* =========================================================
-   6. ШКОЛА БАРИСТА
-   ========================================================= */
 .school-section {
   padding: clamp(3rem, 8vw, 6.25rem) 0;
   background: #faf8f5;
 }
-
 .school__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: clamp(1.5rem, 5vw, 3.75rem);
   align-items: center;
 }
-
 .school__list {
   margin-bottom: 2.1875rem;
   padding-left: 1.25rem;
 }
-
 .school__list li {
   margin-bottom: clamp(0.4rem, 1vw, 0.75rem);
   font-weight: 500;
 }
-
 .school__image img {
   width: auto;
   height: 100%;
@@ -486,20 +410,14 @@ h2.air-box {
   border-radius: 0.75rem;
   box-shadow: 0 0.9375rem 2.5rem rgba(0, 0, 0, 0.05);
 }
-
-/* =========================================================
-   7. АКЦИИ И НОВОСТИ
-   ========================================================= */
 .news-section {
   padding: clamp(3rem, 8vw, 6.25rem) 0;
 }
-
 .news-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   gap: clamp(1rem, 3vw, 2.5rem);
 }
-
 .news-card {
   background: var(--color-white);
   width: 300px;
@@ -508,7 +426,6 @@ h2.air-box {
   flex-direction: column;
   align-items: center;
 }
-
 img.cup {
   width: 100%;
   height: auto;
@@ -517,11 +434,6 @@ img.cup {
   object-fit: cover;
   border-radius: 8px;
 }
-
-/* =========================================================
-   8. ПРЕДЗАКАЗ
-   ========================================================= */
-
 .order-section {
   padding: clamp(6rem, 12vw, 13.75rem) 0;
   background: var(--color-light-bg);
@@ -534,13 +446,11 @@ img.cup {
   margin: 0 auto;
   text-align: center;
 }
-
 .order-form {
   display: flex;
   flex-direction: column;
   gap: clamp(0.5rem, 2vw, 0.9375rem);
 }
-
 .order-form input {
   padding: clamp(0.7rem, 1.5vw, 1rem) clamp(1rem, 2vw, 1.25rem);
   border-radius: 4px;
@@ -549,22 +459,16 @@ img.cup {
   font-size: clamp(0.9rem, 1.2vw, 1rem);
   outline: none;
 }
-
 .form-message {
   font-weight: 600;
   margin-top: 0.9375rem;
   color: var(--color-accent);
 }
-
-/* =========================================================
-   9. ФУТЕР
-   ========================================================= */
 .main-footer {
   background: var(--color-dark);
   color: var(--color-white);
   padding-top: clamp(6rem, 15vw, 12.5rem);
 }
-
 .footer__top {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -574,11 +478,9 @@ img.cup {
   padding-bottom: 3.75rem;
   padding-bottom: clamp(1.5rem, 5vw, 3.75rem);
 }
-
 .footer__contacts-info strong {
   color: var(--color-white);
 }
-
 .footer__map-box {
   background: #1a1a1a;
   height: clamp(10rem, 30vw, 20rem);
@@ -590,7 +492,6 @@ img.cup {
   font-weight: 500;
   border: 1px solid #222;
 }
-
 .footer__bottom-container {
   display: flex;
   justify-content: space-between;
@@ -598,20 +499,11 @@ img.cup {
   gap: clamp(1rem, 3vw, 2rem);
 }
 .map-frame {
-  /* Ширина: минимум 17.5rem (280px), плавно растет как 50vw, максимум 37.5rem (600px) */
   width: clamp(17.5rem, 60vw, 37.5rem);
-
-  /* Высота: минимум 12.5rem (200px), плавно растет как 30vw, максимум 25rem (400px) */
   height: clamp(12.5rem, 40vw, 25rem);
-
   display: block;
-  margin: 0 auto; /* Центрирует карту по горизонтали, если нужно */
+  margin: 0 auto;
 }
-
-/* =========================================================
-   10. Шрифты
-   ========================================================= */
-
 h1.cyber-title-main {
   word-wrap: break-word;
   width: 100%;
@@ -634,7 +526,6 @@ h2.topic {
   text-underline-offset: 3px;
   text-align: center;
 }
-
 p.intro-text,
 li {
   font-size: clamp(0.85rem, 1.2vw, 1.1rem);
@@ -675,21 +566,16 @@ span.menu-item__price {
   z-index: 2;
   white-space: nowrap;
 }
-/* =========================================================
-   11. АДАПТИВНОСТЬ
-   ========================================================= */
 @media (max-width: 1300px) {
   .header__geo {
     display: none;
   }
 }
-
 @media (max-width: 910px) {
   .nav-links {
     display: none;
     order: 4;
   }
-
   .container {
     display: flex;
     flex-direction: column;
@@ -699,26 +585,20 @@ span.menu-item__price {
     margin: 50px auto;
     padding: 0 0.9375rem;
   }
-
   p.space {
     padding-bottom: 2.5rem;
     margin-bottom: 30px;
   }
-
-  /* Нацеливаемся на саму сетку новостей */
   .news-grid {
     display: flex !important;
-    flex-direction: column !important; /* Разворачивает карточки строго вертикально */
+    flex-direction: column !important;
     width: 100% !important;
-    gap: 2rem !important; /* Делает аккуратный отступ между карточками */
+    gap: 2rem !important;
   }
-
-  /* Сами карточки новостей */
   .news-card {
-    position: static !important; /* Возвращает карточки в общий поток */
-    width: 100% !important; /* Карточка займет всю ширину экрана */
+    position: static !important;
+    width: 100% !important;
   }
-
   .hamburger-cyber {
     display: inline-block !important;
     order: 3;
@@ -734,20 +614,17 @@ span.menu-item__price {
   .hamburger-cyber:hover {
     border: 1px solid ye;
   }
-
   .school__content {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
   }
-
   h2.topic {
     margin-bottom: 20px;
   }
-
   .header__logo {
-    order: 1; /* логотип остаётся слева */
+    order: 1;
   }
   .nav-links.active {
     display: flex !important;
@@ -787,7 +664,6 @@ span.menu-item__price {
     background-color: #111111 !important;
     color: #007bc4 !important;
   }
-
   .main-nav {
     position: relative !important;
   }
@@ -799,31 +675,25 @@ span.menu-item__price {
     grid-template-columns: 1fr;
     gap: 2.5rem;
   }
-
   .one {
-    flex-direction: column !important; /* Разворачивает элементы внутри .one сверху вниз */
-    align-items: center; /* Центрирует цифры по горизонтали */
-    gap: 2rem; /* Делает аккуратные отступы между блоками цифр */
+    flex-direction: column !important;
+    align-items: center;
+    gap: 2rem;
   }
-
   .menu-grid {
     grid-template-columns: 1fr;
   }
-
   .menu-item__line {
     display: none;
   }
-
   .hero__actions {
     flex-direction: column;
   }
-
   .footer__map-box {
     display: flex;
     justify-content: center;
     align-items: center;
   }
-
   .hero-slide,
   .stats-section,
   .menu-section,
@@ -831,12 +701,12 @@ span.menu-item__price {
   .news-section,
   .order-section,
   .main-footer {
-    min-height: 100vh; /* Секция занимает ровно весь экран */
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Центрирует форму по вертикали внутри секции */
-    align-items: center; /* Центрирует форму по горизонтали внутри секции */
+    justify-content: center;
+    align-items: center;
     box-sizing: border-box;
-    padding: 4rem 1rem; /* Защитные отступы, чтобы контент не прилипал к краям */
+    padding: 4rem 1rem;
   }
 }
