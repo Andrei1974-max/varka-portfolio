@@ -270,7 +270,7 @@ h2.air-box {
   position: absolute;
   bottom: clamp(4rem, 8vw, 9.375rem);
   left: 4rem;
-  bottom: 17rem;
+  bottom: 19rem;
   z-index: 10;
   display: flex;
   gap: clamp(1rem, 4vw, 3.125rem);
