@@ -1,0 +1,11 @@
+User-agent: *
+Disallow: /css/
+Disallow: /js/
+Disallow: /favicon-96x96.png
+Disallow: /favicon.svg
+Disallow: /favicon.ico
+Disallow: /apple-touch-icon.png
+Disallow: /site.webmanifest
+
+# Карта сайта для корректной индексации на GitHub Pages
+Sitemap: https://andrei1974-max.github.io/varka-portfolio/
