@@ -208,13 +208,11 @@ a {
 /* Настройки для верхней части */
 .hero__content-top {
   margin-top: 100px;
-  border: 1px solid white;
 }
 
 /* Настройки для нижней части */
 .hero__content-bottom {
   max-width: clamp(300px, 40vw, 500px);
-  border: 1px solid white;
   margin-top: 150px;
 }
 
@@ -318,11 +316,10 @@ h2.air-box {
   position: absolute;
   bottom: clamp(4rem, 8vw, 9.375rem);
   left: 4rem;
-  bottom: 18rem;
+  bottom: 17rem;
   z-index: 10;
   display: flex;
   gap: clamp(1rem, 4vw, 3.125rem);
-  border: 1px solid white;
 }
 
 .arrow-btn {
